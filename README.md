@@ -26,10 +26,10 @@ streamlit run app.py
 ```
 
 ## Demo Screenshots
-[Add your screenshots here]
-
+image.png
 ## Examples
-[Add usage examples here]
+image.png
+image.png
 
 ## Technologies Used
 - Python
@@ -38,8 +38,6 @@ streamlit run app.py
 - Ollama
 - LangChain
 
-## Group Members
-[Add your group members here]
 
 ## References
 1. [RAG with ChromaDB and Ollama Guide](https://medium.com/@arunpatidar26/rag-chromadb-ollama-python-guide-for-beginners-30857499d0a0)
