@@ -2,7 +2,9 @@ import tempfile
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+
 def load_documents(files):
+    print("Loading documents...")
     documents = []
 
     for file in files:
@@ -19,4 +21,6 @@ def load_documents(files):
         documents.extend(loader.load())
 
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
-    return splitter.split_documents(documents)
+    print("Splitting documents...")
+    split_documents = splitter.split_documents(documents)
+    return split_documents

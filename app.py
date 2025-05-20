@@ -1,12 +1,16 @@
 import streamlit as st
 from constitution_loader import load_documents
-from qa_engine import init_vectorstore, ask_question
+from qa_engine import init_vectorstore, load_vectorstore, ask_question
 
 st.set_page_config(page_title="Kazakhstan Constitution Assistant")
-st.title("🇰🇿 AI Assistant - Constitution of Kazakhstan")
+st.title("KZ AI Assistant - Constitution of Kazakhstan")
 
 if "vectorstore" not in st.session_state:
-    st.session_state.vectorstore = None
+    # Try to load existing vectorstore if available
+    try:
+        st.session_state.vectorstore = load_vectorstore()
+    except Exception:
+        st.session_state.vectorstore = None
 
 uploaded_files = st.file_uploader("📄 Upload documents", accept_multiple_files=True, type=["pdf", "txt"])
 
